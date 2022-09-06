@@ -13,12 +13,10 @@ Dentro da pasta do projeto executar o seguinte comando
 npm install
 ```
 ## __Executando o Projeto__
-
 Para rodar o Cypress em modo interativo, use o comando
 ```
 npm run cy:open
 ````
-
 Para rodar o Cypress em modo headless, use o comando
 ```
 npm run cy:run
