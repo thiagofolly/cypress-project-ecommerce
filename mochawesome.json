@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-09-06T11:38:58.380Z",
+    "end": "2022-09-06T11:39:42.689Z",
+    "duration": 44309,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "50809d7b-7843-4f89-9bfa-0eab7b9b0f47",
+      "title": "",
+      "fullFile": "cypress/integration/createNewUser.spec.js",
+      "file": "cypress/integration/createNewUser.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5a093120-2180-4300-804c-12af9650abe6",
+          "title": "Create New User",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "When fill the form and submit, then the user must be created",
+              "fullTitle": "Create New User When fill the form and submit, then the user must be created",
+              "timedOut": null,
+              "duration": 40037,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var email = chance.email();\nvar firstName = chance.first();\nvar lastName = chance.last();\ncy.visit('http://automationpractice.com/');\ncy.get('div a[class=\"login\"]').should('be.visible').click();\ncy.url().should('contain', 'my-account');\ncy.get('input#email_create').should('be.visible').type(email);\ncy.get('button#SubmitCreate').should('be.visible').click();\ncy.wait(5000);\ncy.url().should('contain', 'account-creation');\ncy.get('input#email').should('have.value', email);\ncy.get(`input#id_gender${chance.integer({\n  min: 1,\n  max: 2\n})}`).check();\ncy.get('input#customer_firstname').type(firstName);\ncy.get('input#customer_lastname').type(lastName);\ncy.get('input#passwd').type(chance.word({\n  length: 5\n}));\ncy.get('select#days').select(chance.integer({\n  min: 1,\n  max: 28\n}));\ncy.get('select#months').select(chance.month());\ncy.get('select#years').select(chance.year({\n  min: 1900,\n  max: 2022\n}));\ncy.get('input#newsletter').check();\ncy.get('input#optin').check();\ncy.get('input#firstname').should('have.value', firstName);\ncy.get('input#lastname').should('have.value', lastName);\ncy.get('input#company').type(chance.sentence({\n  words: 3\n}));\ncy.get('input#address1').type(chance.street());\ncy.get('input#address2').type(chance.province());\ncy.get('input#city').type(chance.city());\ncy.get('select#id_state').select(chance.integer({\n  min: 1,\n  max: 50\n}));\ncy.get('input#postcode').type(chance.zip());\ncy.get('select#id_country').type('United States');\ncy.get('textarea#other').type(chance.sentence({\n  words: 10\n}));\ncy.get('input#phone').type(chance.phone({\n  country: 'us'\n}));\ncy.get('input#phone_mobile').type(chance.phone({\n  country: 'us',\n  mobile: true\n}));\ncy.get('input#alias').clear().type(chance.address());\ncy.get('button#submitAccount').should('be.visible').click();\ncy.url().should('contain', 'my-account');",
+              "err": {},
+              "uuid": "aa645f19-7fb9-4cf8-b16a-bff0ece890a0",
+              "parentUUID": "5a093120-2180-4300-804c-12af9650abe6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "aa645f19-7fb9-4cf8-b16a-bff0ece890a0"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 40037,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "mochawesome-report",
+        "quiet": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
